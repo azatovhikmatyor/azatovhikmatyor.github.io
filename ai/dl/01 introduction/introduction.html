@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>introduction</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<link rel="stylesheet" href="../style1.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
+<script src="../script1.js" type="text/x-mathjax-config"> </script>
+<link rel="stylesheet" href="../style2.css">
+<link rel="stylesheet" href="../style_custom.css">
+
+<!-- End of mermaid configuration -->
+</head>
+
+<body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
+<main>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 style="text-align:center;color:#0F4C81;">
+Introduction to Deep Learning
+</h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 style="color:#88B04B">What is Deep Learning?</h3>
+<p>Deep Learning is a branch of <strong>Machine Learning (ML)</strong> that uses <strong>Artificial Neural Networks</strong> to automatically learn patterns and features from data. Unlike traditional ML, which often requires manual feature engineering, deep learning models learn directly from raw data, such as images, text, and audio.</p>
+<p>These models are called <strong>"deep"</strong> because they have multiple layers of interconnected "neurons" that progressively extract higher-level features from the input. Deep learning powers many modern AI systems, including <strong>image recognition</strong>, <strong>speech-to-text</strong>, <strong>chatbots</strong>, and <strong>autonomous vehicles</strong>.</p>
+<p>In simple terms, deep learning allows machines to <em>learn</em> the way humans do — by analyzing large amounts of data and finding patterns — but at a much larger scale.</p>
+<p>ANNs (Artificial Neural Networks) are at the very core of Deep Learning. They are versatile, powerful, and scalable, making them ideal to tackle large and highly complex Machine Learning tasks such as classifying billions of images (e.g., Google Images), powering speech recognition services (e.g., Apple’s Siri), recommending the best videos to watch to hundreds of millions of users every day (e.g., YouTube), or learning to beat the world champion at the game of Go (DeepMind’s AlphaGo).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 style="color:#88B04B;">Biological Neurons</h3>
+<p>Before we discuss artificial neurons, let’s take a quick look at a biological neuron. It is an unusual-looking cell mostly found in animal brains. It’s composed of a <em>cell body</em> containing the nucleus and most of the cell’s complex components, many branching extensions called <em>dendrites</em>, plus one very long extension called the <em>axon</em>. The axon’s length may be just a few times longer than the cell body, or up to tens of thousands of times longer. Near its extremity the axon splits off into many branches called <em>telodendria</em>, and at the tip of these branches are minuscule structures called <em>synaptic terminals</em> (or simply <em>synapses</em>), which are connected to the dendrites or cell bodies of other neurons. Biological neurons produce short electrical impulses called <em>action potentials</em> (APs, or just <em>signals</em>) which travel along the axons and make the synapses release chemical signals called <em>neurotransmitters</em>. When a neuron receives a sufficient amount of these neurotransmitters within a few milliseconds, it fires its own electrical impulses (actually, it depends on the
+neurotransmitters, as some of them inhibit the neuron from firing).</p>
+<div style="display:flex;justify-content:center;">
+<img alt="No description has been provided for this image" src="images/biological-neuron-1.png" style="width:500px;object-fit:cover;"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Thus, individual biological neurons seem to behave in a rather simple way,
+but they are organized in a vast network of billions, with each neuron
+typically connected to thousands of other neurons. Highly complex
+computations can be performed by a network of fairly simple neurons,
+much like a complex anthill can emerge from the combined efforts of
+simple ants. The architecture of biological neural networks (BNNs) is still
+the subject of active research, but some parts of the brain have been
+mapped, and it seems that neurons are often organized in consecutive
+layers, especially in the cerebral cortex (i.e., the outer layer of your brain).</p>
+<div style="display:flex;justify-content:center;">
+<img alt="No description has been provided for this image" src="images/biological-neuron-2.png" style="width:600px;object-fit:cover;"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 style="color:#88B04B;">The Perceptron</h3>
+<p>The <em>Perceptron</em> is one of the simplest ANN architectures, invented in 1957
+by Frank Rosenblatt. It is based on a slightly different artificial neuron called a <em>threshold logic unit</em> (TLU), or sometimes a <em>linear threshold unit</em> (LTU). The inputs and output are numbers (instead of binary on/off values), and each input connection is associated with a weight. The TLU first computes a linear function of its inputs: $z = w_1x_1 + w_2x_2 + \dots + w_nx_n + b = w^Tx + b$. Then it applies a <em>step function</em> to the result: $h_w(x) = \text{step}(z)$. So it’s almost like Logistic Regression, except it uses a step function instead of the logistic function. Just like in Logistic Regression, the model parameters are the input weights $w$ and the bias term $b$.</p>
+<div style="display:flex;justify-content:center;">
+<img alt="No description has been provided for this image" src="images/threshold_logic_unit.png" style="width:500px;object-fit:cover;"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>The most common step function used in Perceptrons is the <em>Heaviside step function</em>. Sometimes the <em>sign</em> function is used instead.</p>
+<p>$$
+\text{heaviside}(z) = \begin{cases} 0 \text{ if } z \lt  0 \\
+                                    1 \text{ if } z \ge 0
+\end{cases}
+$$</p>
+<p>$$
+\text{sgn}(z) = \begin{cases} -1 \text{ if } z \lt  0 \\
+                               0 \text{ if } z = 0 \\
+                               1 \text{ if } z \gt 0
+\end{cases}
+$$</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>A single TLU can be used for simple linear binary classification. It computes a linear function of its inputs, and if the result exceeds a threshold, it outputs the positive class. Otherwise it outputs the negative class. This may remind you of Logistic Regression or linear SVM classification. You could, for example, use a single TLU to classify iris flowers based on petal length and width. Training such a TLU would require finding the right values for $w_1$, $w_2$ and $b$ (the training algorithm is discussed shortly).</p>
+<p>A Perceptron is composed of one or more TLUs organized in a single layer,
+where every TLU is connected to every input. Such a layer is called a <em>fully connected layer</em>, or a <em>dense</em> layer. The inputs constitute the <em>input layer</em>. And since the layer of TLUs produces the final outputs, it is called the <em>output layer</em>.</p>
+<div style="display:flex;justify-content:center;">
+<img alt="No description has been provided for this image" src="images/perceptron_1.png" style="width:500px;object-fit:cover;"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>This Perceptron can classify instances simultaneously into three different
+binary classes, which makes it a multilabel classifier. It may also be used
+for multiclass classification.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Using the principles of linear algebra, the following equation can efficiently compute the outputs of a layer of artificial neurons for multiple instances simultaneously:</p>
+<p>$$
+h_{W,b}(X) = \phi(XW + b)
+$$</p>
+<p>In this equation:</p>
+<ul>
+<li>$X$ is the matrix of input features, with each row representing an instance and each column representing a feature.</li>
+<li>$W$ is the weight matrix, with rows corresponding to inputs and columns to neurons.</li>
+<li>$b$ is the bias vector, containing one bias term per neuron.</li>
+<li>$\phi$ is the activation function. For artificial neurons acting as threshold logic units (TLUs), it is a step function, though other activation functions will be discussed later.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>So, how is a perceptron trained? The perceptron training algorithm proposed by Rosenblatt was largely inspired by <strong>Hebb’s rule</strong>. In his 1949 book <strong>The Organization of Behavior</strong> (Wiley), Donald Hebb suggested that when a biological neuron triggers another neuron often, the connection between these two neurons grows stronger. Siegrid Löwel later summarized Hebb’s idea in the catchy phrase, <strong>“Cells that fire together, wire together”</strong>; that is, the connection weight between two neurons tends to increase when they fire simultaneously. This rule later became known as Hebb’s rule (or <em>Hebbian learning</em>). Perceptrons are trained using a variant of this rule that takes into account the error made by the network when it makes a prediction; the perceptron learning rule reinforces connections that help reduce the error.</p>
+<p>More specifically, the perceptron is fed one training instance at a time, and for each instance it makes its predictions. For every output neuron that produced a wrong prediction, it reinforces the connection weights from the inputs that would have contributed to the correct prediction.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>The Perceptron learning rule for updating weights is given by:</p>
+<p>$$
+w_{i,j}^{\text{next}} = w_{i,j} + \eta \cdot (y_j - \hat{y}_j) \cdot x_i
+$$</p>
+<p>In this equation:</p>
+<ul>
+<li>$w_{i,j}$ represents the connection weight between the $i$-th input and the $j$-th neuron.</li>
+<li>$x_i$ is the $i$-th input value of the current training instance.</li>
+<li>$\hat{y}_j$ is the output of the $j$-th neuron for the current training instance.</li>
+<li>$y_j$ is the target output of the $j$-th neuron for the current training instance.</li>
+<li>$\eta$ is the learning rate.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>The decision boundary of each output neuron is linear, so perceptrons are incapable of learning complex patterns (just like logistic regression classifiers). However, if the training instances are linearly separable, Rosenblatt demonstrated that this algorithm would converge to a solution.⁠ This is called the <em>perceptron convergence theorem</em>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Scikit-Learn provides a Perceptron class that can be used pretty much as you would expect—for example, on the iris dataset.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_iris</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">Perceptron</span>
+
+<span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">(</span><span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">[[</span><span class="s1">'petal length (cm)'</span><span class="p">,</span> <span class="s1">'petal width (cm)'</span><span class="p">]]</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">target</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="c1"># Iris setosa</span>
+
+<span class="n">per_clf</span> <span class="o">=</span> <span class="n">Perceptron</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">per_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<style>#sk-container-id-1 {
+  /* Definition of color scheme common for light and dark mode */
+  --sklearn-color-text: black;
+  --sklearn-color-line: gray;
+  /* Definition of color scheme for unfitted estimators */
+  --sklearn-color-unfitted-level-0: #fff5e6;
+  --sklearn-color-unfitted-level-1: #f6e4d2;
+  --sklearn-color-unfitted-level-2: #ffe0b3;
+  --sklearn-color-unfitted-level-3: chocolate;
+  /* Definition of color scheme for fitted estimators */
+  --sklearn-color-fitted-level-0: #f0f8ff;
+  --sklearn-color-fitted-level-1: #d4ebff;
+  --sklearn-color-fitted-level-2: #b3dbfd;
+  --sklearn-color-fitted-level-3: cornflowerblue;
+
+  /* Specific color for light theme */
+  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
+  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-icon: #696969;
+
+  @media (prefers-color-scheme: dark) {
+    /* Redefinition of color scheme for dark theme */
+    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
+    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-icon: #878787;
+  }
+}
+
+#sk-container-id-1 {
+  color: var(--sklearn-color-text);
+}
+
+#sk-container-id-1 pre {
+  padding: 0;
+}
+
+#sk-container-id-1 input.sk-hidden--visually {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#sk-container-id-1 div.sk-dashed-wrapped {
+  border: 1px dashed var(--sklearn-color-line);
+  margin: 0 0.4em 0.5em 0.4em;
+  box-sizing: border-box;
+  padding-bottom: 0.4em;
+  background-color: var(--sklearn-color-background);
+}
+
+#sk-container-id-1 div.sk-container {
+  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
+     but bootstrap.min.css set `[hidden] { display: none !important; }`
+     so we also need the `!important` here to be able to override the
+     default hidden behavior on the sphinx rendered scikit-learn.org.
+     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
+  display: inline-block !important;
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-text-repr-fallback {
+  display: none;
+}
+
+div.sk-parallel-item,
+div.sk-serial,
+div.sk-item {
+  /* draw centered vertical line to link estimators */
+  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Parallel-specific style estimator block */
+
+#sk-container-id-1 div.sk-parallel-item::after {
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
+  flex-grow: 1;
+}
+
+#sk-container-id-1 div.sk-parallel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: var(--sklearn-color-background);
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-parallel-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#sk-container-id-1 div.sk-parallel-item:first-child::after {
+  align-self: flex-end;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:last-child::after {
+  align-self: flex-start;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:only-child::after {
+  width: 0;
+}
+
+/* Serial-specific style estimator block */
+
+#sk-container-id-1 div.sk-serial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--sklearn-color-background);
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
+clickable and can be expanded/collapsed.
+- Pipeline and ColumnTransformer use this feature and define the default style
+- Estimators will overwrite some part of the style using the `sk-estimator` class
+*/
+
+/* Pipeline and ColumnTransformer style (default) */
+
+#sk-container-id-1 div.sk-toggleable {
+  /* Default theme specific background. It is overwritten whether we have a
+  specific estimator or a Pipeline/ColumnTransformer */
+  background-color: var(--sklearn-color-background);
+}
+
+/* Toggleable label */
+#sk-container-id-1 label.sk-toggleable__label {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:before {
+  /* Arrow on the left of the label */
+  content: "▸";
+  float: left;
+  margin-right: 0.25em;
+  color: var(--sklearn-color-icon);
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {
+  color: var(--sklearn-color-text);
+}
+
+/* Toggleable content - dropdown */
+
+#sk-container-id-1 div.sk-toggleable__content {
+  max-height: 0;
+  max-width: 0;
+  overflow: hidden;
+  text-align: left;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content pre {
+  margin: 0.2em;
+  border-radius: 0.25em;
+  color: var(--sklearn-color-text);
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted pre {
+  /* unfitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+  /* Expand drop-down */
+  max-height: 200px;
+  max-width: 100%;
+  overflow: auto;
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+  content: "▾";
+}
+
+/* Pipeline/ColumnTransformer-specific style */
+
+#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator-specific style */
+
+/* Colorize estimator box */
+#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label label.sk-toggleable__label,
+#sk-container-id-1 div.sk-label label {
+  /* The background is the default theme color */
+  color: var(--sklearn-color-text-on-default-background);
+}
+
+/* On hover, darken the color of the background */
+#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+/* Label box, darken color on hover, fitted */
+#sk-container-id-1 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator label */
+
+#sk-container-id-1 div.sk-label label {
+  font-family: monospace;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.2em;
+}
+
+#sk-container-id-1 div.sk-label-container {
+  text-align: center;
+}
+
+/* Estimator-specific */
+#sk-container-id-1 div.sk-estimator {
+  font-family: monospace;
+  border: 1px dotted var(--sklearn-color-border-box);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+/* on hover */
+#sk-container-id-1 div.sk-estimator:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Specification for estimator info (e.g. "i" and "?") */
+
+/* Common style for "i" and "?" */
+
+.sk-estimator-doc-link,
+a:link.sk-estimator-doc-link,
+a:visited.sk-estimator-doc-link {
+  float: right;
+  font-size: smaller;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  text-decoration: none !important;
+  margin-left: 1ex;
+  /* unfitted */
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-1);
+}
+
+.sk-estimator-doc-link.fitted,
+a:link.sk-estimator-doc-link.fitted,
+a:visited.sk-estimator-doc-link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+div.sk-estimator:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover,
+div.sk-label-container:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover,
+div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+/* Span, style for the box shown on hovering the info icon */
+.sk-estimator-doc-link span {
+  display: none;
+  z-index: 9999;
+  position: relative;
+  font-weight: normal;
+  right: .2ex;
+  padding: .5ex;
+  margin: .5ex;
+  width: min-content;
+  min-width: 20ex;
+  max-width: 50ex;
+  color: var(--sklearn-color-text);
+  box-shadow: 2pt 2pt 4pt #999;
+  /* unfitted */
+  background: var(--sklearn-color-unfitted-level-0);
+  border: .5pt solid var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted span {
+  /* fitted */
+  background: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3);
+}
+
+.sk-estimator-doc-link:hover span {
+  display: block;
+}
+
+/* "?"-specific style due to the `<a>` HTML tag */
+
+#sk-container-id-1 a.estimator_doc_link {
+  float: right;
+  font-size: 1rem;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1rem;
+  height: 1rem;
+  width: 1rem;
+  text-decoration: none;
+  /* unfitted */
+  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+#sk-container-id-1 a.estimator_doc_link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+}
+</style><div class="sk-top-container" id="sk-container-id-1"><div class="sk-text-repr-fallback"><pre>Perceptron(random_state=42)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br/>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input checked="" class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted" for="sk-estimator-id-1">  Perceptron<a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.5/modules/generated/sklearn.linear_model.Perceptron.html" rel="noreferrer" target="_blank">?<span>Documentation for Perceptron</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>Perceptron(random_state=42)</pre></div> </div></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">X_new</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">per_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_new</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="c1"># predicts True and False for these 2 flowers</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>array([ True, False])</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>You may have noticed that the perceptron learning algorithm strongly resembles stochastic gradient descent. In fact Scikit-Learn’s Perceptron class is equivalent to using an <code>SGDClassifier</code> with the following hyperparameters: <code>loss="perceptron"</code>, <code>learning_rate="constant"</code>, <code>eta0=1</code> (the learning rate), and <code>penalty=None</code> (no regularization).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>In their 1969 work Perceptrons, Marvin Minsky and Seymour Papert identified significant limitations of perceptrons, particularly their inability to solve certain simple problems, such as the exclusive OR (XOR) classification problem. This limitation, shared by all linear classification models like logistic regression, led to disappointment among researchers who had expected greater capabilities from perceptrons.</p>
+<p>It turns out that some of the limitations of perceptrons can be eliminated by stacking multiple perceptrons. The resulting ANN is called a <strong>multilayer perceptron (MLP)</strong>. An MLP can solve the XOR problem, as you can verify by computing the output of the MLP represented on the right side of this figure: with inputs (0, 0) or (1, 1), the network outputs 0, and with inputs (0, 1) or (1, 0) it outputs 1.</p>
+<div style="display:flex;justify-content:center;">
+<img alt="No description has been provided for this image" src="images/xor_mlp.png" style="width:500px;object-fit:cover;"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 style="color:#88B04B;">The Multilayer Perceptroon and Backpropagation</h3>
+<p>An MLP is composed of one <strong>input layer</strong>, one or more layers of TLUs called <strong>hidden layers</strong>, and one final layer of TLUs called the <strong>output layer</strong>. The layers close to the input layer are usually called the <strong>lower layers</strong>, and the ones close to the outputs are usually called the <strong>upper layers</strong>.</p>
+<div style="display:flex;justify-content:center;">
+<img alt="No description has been provided for this image" src="images/mlp_archetecture.png" style="width:700px;object-fit:cover;"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>When an ANN contains a deep stack of hidden layers,⁠ it is called a deep neural network (DNN). The field of deep learning studies DNNs, and more generally it is interested in models containing deep stacks of computations. Even so, many people talk about deep learning whenever neural networks are involved (even shallow ones).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>For many years researchers struggled to find a way to train MLPs, without success. In the early 1960s several researchers discussed the possibility of using gradient descent to train neural networks, but this requires computing the gradients of the model’s error with regard to the model parameters; it wasn’t clear at the time how to do this efficiently with such a complex model containing so many parameters, especially with the
+computers they had back then.</p>
+<p>Then, in 1970, a researcher named Seppo Linnainmaa introduced in his master’s thesis a technique to compute all the gradients automatically and efficiently. This algorithm is now called reverse-mode automatic
+differentiation (or reverse-mode autodiff for short). In just two passes through the network (one forward, one backward), it is able to compute the gradients of the neural network’s error with regard to every single model parameter. In other words, it can find out how each connection weight and each bias should be tweaked in order to reduce the neural network’s error. These gradients can then be used to perform a gradient descent step. If you repeat this process of computing the gradients automatically and taking a gradient descent step, the neural network’s error will gradually drop until it eventually reaches a minimum. This combination of reverse-mode autodiff and gradient descent is now called <strong>backpropagation</strong> (or backprop for short).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<p>We now know where neural nets came from, what their architecture is, and how to compute their outputs. We’ve also covered the backpropagation algorithm. But what exactly can we do with neural nets?</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 style="color:#88B04B;">Regression MLPs</h3>
+<p>First, MLPs can be used for regression tasks. If you want to predict a single value (e.g., the price of a house, given many of its features), then you just need a single output neuron: its output is the predicted value. For multivariate regression (i.e., to predict multiple values at once), you need one output neuron per output dimension. For example, to locate the center of an object in an image, you need to predict 2D coordinates, so you need two output neurons. If you also want to place a bounding box around the object, then you need two more numbers: the width and the height of the object. So, you end up with four output neurons.</p>
+<p>Scikit-Learn includes an <code>MLPRegressor</code> class, so let’s use it to build an MLP with three hidden layers composed of 50 neurons each, and train it on the California housing dataset. For simplicity, we will use Scikit-Learn’s <code>fetch_california_housing()</code> function to load the data.</p>
+<p>The following code starts by fetching and splitting the dataset, then it creates a pipeline to standardize the input features before sending them to the MLPRegressor. This is very important for neural networks because they are trained using gradient descent, and as we saw, gradient descent does not converge very well when the features have very different scales. Finally, the code trains the model and evaluates its validation error. The model uses the <code>ReLU</code> activation function in the hidden layers, and it uses a variant of gradient descent called <code>Adam</code> to minimize the mean squared error, with a little bit of $ℓ_2$ regularization (which you can control via the alpha hyperparameter):</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">fetch_california_housing</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">root_mean_squared_error</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.neural_network</span><span class="w"> </span><span class="kn">import</span> <span class="n">MLPRegressor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_pipeline</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">housing</span> <span class="o">=</span> <span class="n">fetch_california_housing</span><span class="p">()</span>
+<span class="n">X_train_full</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train_full</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">housing</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">housing</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_valid</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_valid</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_train_full</span><span class="p">,</span> <span class="n">y_train_full</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">mlp_reg</span> <span class="o">=</span> <span class="n">MLPRegressor</span><span class="p">(</span><span class="n">hidden_layer_sizes</span><span class="o">=</span><span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">StandardScaler</span><span class="p">(),</span> <span class="n">mlp_reg</span><span class="p">)</span>
+<span class="n">pipeline</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_valid</span><span class="p">)</span>
+<span class="n">rmse</span> <span class="o">=</span> <span class="n">root_mean_squared_error</span><span class="p">(</span><span class="n">y_valid</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="n">rmse</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>np.float64(0.5053326657967906)</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># compare with Random Forest</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.ensemble</span><span class="w"> </span><span class="kn">import</span> <span class="n">RandomForestRegressor</span>
+
+<span class="n">rf_clf</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">()</span>
+<span class="n">rf_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">root_mean_squared_error</span><span class="p">(</span><span class="n">y_valid</span><span class="p">,</span> <span class="n">rf_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_valid</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>np.float64(0.50856063486333)</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>We get a validation RMSE of about 0.505, which is comparable to what you would get with a random forest classifier. Not too bad for a first try!</p>
+<p><strong>Note that this MLP does not use any activation function for the output layer, so it’s free to output any value it wants.</strong> This is generally fine, but if you want to guarantee that the output will always be positive, then you should use the ReLU activation function in the output layer, or the softplus activation function, which is a smooth variant of ReLU:
+$$
+\text{softplus}(z) = log(1 + exp(z))
+$$</p>
+<p>Softplus is close to 0 when z is negative, and close to z when z is positive. Finally, if you want to guarantee that the predictions will always fall within a given range of values, then you should use the sigmoid function or the hyperbolic tangent, and scale the targets to the appropriate range: 0 to 1 for sigmoid and –1 to 1 for tanh. Sadly, the MLPRegressor class does not support activation functions in the output layer.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>The MLPRegressor class uses the mean squared error, which is usually what you want for regression, but if you have a lot of outliers in the training set, you may prefer to use the mean absolute error instead. Alternatively, you may want to use the <em>Huber loss</em>, which is a combination of both. It is quadratic when the error is smaller than a threshold δ (typically 1) but linear when the error is larger than δ. The linear part makes it less sensitive to outliers than the mean squared error, and the quadratic part allows it to converge faster and be more precise than the mean absolute error. However, MLPRegressor only supports the MSE.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 style="color:#88B04B;">Classification MLPs</h3>
+<p>MLPs can also be used for classification tasks. For a binary classification problem, you just need a single output neuron using the sigmoid activation function: the output will be a number between 0 and 1, which you can interpret as the estimated probability of the positive class. The estimated probability of the negative class is equal to one minus that number.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>MLPs can also easily handle multilabel binary classification tasks. For example, you could have an email classification system that predicts whether each incoming email is ham or spam, and simultaneously predicts whether it is an urgent or nonurgent email. In this case, you would need two output neurons, both using the sigmoid activation function: the first would output the probability that the email is spam, and the second would output the probability that it is urgent. More generally, you would dedicate one output neuron for each positive class. Note that the output probabilities do not necessarily add up to 1. This lets the model output any combination of labels: you can have nonurgent ham, urgent ham, nonurgent spam, and perhaps even urgent spam (although that would probably be an error).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>If each instance can belong only to a single class, out of three or more possible classes (e.g., classes 0 through 9 for digit image classification), then you need to have one output neuron per class, and you should use the softmax activation function for the whole output layer. The softmax function will ensure that all the estimated probabilities are between 0 and 1 and that they add up to 1, since the classes are exclusive. This is called multiclass classification.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Regarding the loss function, since we are predicting probability distributions, the cross-entropy loss (or x-entropy or log loss for short) is generally a good choice.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<div style="display:flex;justify-content:center;">
+<img alt="No description has been provided for this image" src="images/mlp_relu_softmax.png" style="width:700px;object-fit:cover;"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Scikit-Learn has an MLPClassifier class in the <code>sklearn.neural_network</code> package. It is almost identical to the <code>MLPRegressor</code> class, except that it minimizes the <strong>cross entropy</strong> rather than the MSE.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [58]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_iris</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.pipeline</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_pipeline</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.neural_network</span><span class="w"> </span><span class="kn">import</span> <span class="n">MLPClassifier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">ConfusionMatrixDisplay</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [47]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
+
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [53]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">mlp</span> <span class="o">=</span> <span class="n">MLPClassifier</span><span class="p">(</span>
+    <span class="n">hidden_layer_sizes</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+    <span class="n">activation</span><span class="o">=</span><span class="s1">'relu'</span><span class="p">,</span>
+    <span class="n">solver</span><span class="o">=</span><span class="s1">'adam'</span><span class="p">,</span>
+    <span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
+
+<span class="n">clf</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">StandardScaler</span><span class="p">(),</span> <span class="n">mlp</span><span class="p">)</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[53]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<style>#sk-container-id-10 {
+  /* Definition of color scheme common for light and dark mode */
+  --sklearn-color-text: black;
+  --sklearn-color-line: gray;
+  /* Definition of color scheme for unfitted estimators */
+  --sklearn-color-unfitted-level-0: #fff5e6;
+  --sklearn-color-unfitted-level-1: #f6e4d2;
+  --sklearn-color-unfitted-level-2: #ffe0b3;
+  --sklearn-color-unfitted-level-3: chocolate;
+  /* Definition of color scheme for fitted estimators */
+  --sklearn-color-fitted-level-0: #f0f8ff;
+  --sklearn-color-fitted-level-1: #d4ebff;
+  --sklearn-color-fitted-level-2: #b3dbfd;
+  --sklearn-color-fitted-level-3: cornflowerblue;
+
+  /* Specific color for light theme */
+  --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, white)));
+  --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, black)));
+  --sklearn-color-icon: #696969;
+
+  @media (prefers-color-scheme: dark) {
+    /* Redefinition of color scheme for dark theme */
+    --sklearn-color-text-on-default-background: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-background: var(--sg-background-color, var(--theme-background, var(--jp-layout-color0, #111)));
+    --sklearn-color-border-box: var(--sg-text-color, var(--theme-code-foreground, var(--jp-content-font-color1, white)));
+    --sklearn-color-icon: #878787;
+  }
+}
+
+#sk-container-id-10 {
+  color: var(--sklearn-color-text);
+}
+
+#sk-container-id-10 pre {
+  padding: 0;
+}
+
+#sk-container-id-10 input.sk-hidden--visually {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#sk-container-id-10 div.sk-dashed-wrapped {
+  border: 1px dashed var(--sklearn-color-line);
+  margin: 0 0.4em 0.5em 0.4em;
+  box-sizing: border-box;
+  padding-bottom: 0.4em;
+  background-color: var(--sklearn-color-background);
+}
+
+#sk-container-id-10 div.sk-container {
+  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
+     but bootstrap.min.css set `[hidden] { display: none !important; }`
+     so we also need the `!important` here to be able to override the
+     default hidden behavior on the sphinx rendered scikit-learn.org.
+     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
+  display: inline-block !important;
+  position: relative;
+}
+
+#sk-container-id-10 div.sk-text-repr-fallback {
+  display: none;
+}
+
+div.sk-parallel-item,
+div.sk-serial,
+div.sk-item {
+  /* draw centered vertical line to link estimators */
+  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Parallel-specific style estimator block */
+
+#sk-container-id-10 div.sk-parallel-item::after {
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
+  flex-grow: 1;
+}
+
+#sk-container-id-10 div.sk-parallel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: var(--sklearn-color-background);
+  position: relative;
+}
+
+#sk-container-id-10 div.sk-parallel-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#sk-container-id-10 div.sk-parallel-item:first-child::after {
+  align-self: flex-end;
+  width: 50%;
+}
+
+#sk-container-id-10 div.sk-parallel-item:last-child::after {
+  align-self: flex-start;
+  width: 50%;
+}
+
+#sk-container-id-10 div.sk-parallel-item:only-child::after {
+  width: 0;
+}
+
+/* Serial-specific style estimator block */
+
+#sk-container-id-10 div.sk-serial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--sklearn-color-background);
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
+clickable and can be expanded/collapsed.
+- Pipeline and ColumnTransformer use this feature and define the default style
+- Estimators will overwrite some part of the style using the `sk-estimator` class
+*/
+
+/* Pipeline and ColumnTransformer style (default) */
+
+#sk-container-id-10 div.sk-toggleable {
+  /* Default theme specific background. It is overwritten whether we have a
+  specific estimator or a Pipeline/ColumnTransformer */
+  background-color: var(--sklearn-color-background);
+}
+
+/* Toggleable label */
+#sk-container-id-10 label.sk-toggleable__label {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+#sk-container-id-10 label.sk-toggleable__label-arrow:before {
+  /* Arrow on the left of the label */
+  content: "▸";
+  float: left;
+  margin-right: 0.25em;
+  color: var(--sklearn-color-icon);
+}
+
+#sk-container-id-10 label.sk-toggleable__label-arrow:hover:before {
+  color: var(--sklearn-color-text);
+}
+
+/* Toggleable content - dropdown */
+
+#sk-container-id-10 div.sk-toggleable__content {
+  max-height: 0;
+  max-width: 0;
+  overflow: hidden;
+  text-align: left;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-10 div.sk-toggleable__content.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-10 div.sk-toggleable__content pre {
+  margin: 0.2em;
+  border-radius: 0.25em;
+  color: var(--sklearn-color-text);
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-10 div.sk-toggleable__content.fitted pre {
+  /* unfitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-10 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+  /* Expand drop-down */
+  max-height: 200px;
+  max-width: 100%;
+  overflow: auto;
+}
+
+#sk-container-id-10 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+  content: "▾";
+}
+
+/* Pipeline/ColumnTransformer-specific style */
+
+#sk-container-id-10 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-10 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator-specific style */
+
+/* Colorize estimator box */
+#sk-container-id-10 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-10 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+#sk-container-id-10 div.sk-label label.sk-toggleable__label,
+#sk-container-id-10 div.sk-label label {
+  /* The background is the default theme color */
+  color: var(--sklearn-color-text-on-default-background);
+}
+
+/* On hover, darken the color of the background */
+#sk-container-id-10 div.sk-label:hover label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+/* Label box, darken color on hover, fitted */
+#sk-container-id-10 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator label */
+
+#sk-container-id-10 div.sk-label label {
+  font-family: monospace;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 1.2em;
+}
+
+#sk-container-id-10 div.sk-label-container {
+  text-align: center;
+}
+
+/* Estimator-specific */
+#sk-container-id-10 div.sk-estimator {
+  font-family: monospace;
+  border: 1px dotted var(--sklearn-color-border-box);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-10 div.sk-estimator.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+/* on hover */
+#sk-container-id-10 div.sk-estimator:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-10 div.sk-estimator.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Specification for estimator info (e.g. "i" and "?") */
+
+/* Common style for "i" and "?" */
+
+.sk-estimator-doc-link,
+a:link.sk-estimator-doc-link,
+a:visited.sk-estimator-doc-link {
+  float: right;
+  font-size: smaller;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  text-decoration: none !important;
+  margin-left: 1ex;
+  /* unfitted */
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-1);
+}
+
+.sk-estimator-doc-link.fitted,
+a:link.sk-estimator-doc-link.fitted,
+a:visited.sk-estimator-doc-link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+div.sk-estimator:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover,
+div.sk-label-container:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover,
+div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+/* Span, style for the box shown on hovering the info icon */
+.sk-estimator-doc-link span {
+  display: none;
+  z-index: 9999;
+  position: relative;
+  font-weight: normal;
+  right: .2ex;
+  padding: .5ex;
+  margin: .5ex;
+  width: min-content;
+  min-width: 20ex;
+  max-width: 50ex;
+  color: var(--sklearn-color-text);
+  box-shadow: 2pt 2pt 4pt #999;
+  /* unfitted */
+  background: var(--sklearn-color-unfitted-level-0);
+  border: .5pt solid var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted span {
+  /* fitted */
+  background: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3);
+}
+
+.sk-estimator-doc-link:hover span {
+  display: block;
+}
+
+/* "?"-specific style due to the `<a>` HTML tag */
+
+#sk-container-id-10 a.estimator_doc_link {
+  float: right;
+  font-size: 1rem;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-background);
+  border-radius: 1rem;
+  height: 1rem;
+  width: 1rem;
+  text-decoration: none;
+  /* unfitted */
+  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+}
+
+#sk-container-id-10 a.estimator_doc_link.fitted {
+  /* fitted */
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+#sk-container-id-10 a.estimator_doc_link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+#sk-container-id-10 a.estimator_doc_link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+}
+</style><div class="sk-top-container" id="sk-container-id-10"><div class="sk-text-repr-fallback"><pre>Pipeline(steps=[('standardscaler', StandardScaler()),
+                ('mlpclassifier',
+                 MLPClassifier(hidden_layer_sizes=[10, 10], max_iter=1000,
+                               random_state=42))])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br/>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-26" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted" for="sk-estimator-id-26">  Pipeline<a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.5/modules/generated/sklearn.pipeline.Pipeline.html" rel="noreferrer" target="_blank">?<span>Documentation for Pipeline</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></label><div class="sk-toggleable__content fitted"><pre>Pipeline(steps=[('standardscaler', StandardScaler()),
+                ('mlpclassifier',
+                 MLPClassifier(hidden_layer_sizes=[10, 10], max_iter=1000,
+                               random_state=42))])</pre></div> </div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-27" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted" for="sk-estimator-id-27"> StandardScaler<a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.5/modules/generated/sklearn.preprocessing.StandardScaler.html" rel="noreferrer" target="_blank">?<span>Documentation for StandardScaler</span></a></label><div class="sk-toggleable__content fitted"><pre>StandardScaler()</pre></div> </div></div><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-28" type="checkbox"/><label class="sk-toggleable__label fitted sk-toggleable__label-arrow fitted" for="sk-estimator-id-28"> MLPClassifier<a class="sk-estimator-doc-link fitted" href="https://scikit-learn.org/1.5/modules/generated/sklearn.neural_network.MLPClassifier.html" rel="noreferrer" target="_blank">?<span>Documentation for MLPClassifier</span></a></label><div class="sk-toggleable__content fitted"><pre>MLPClassifier(hidden_layer_sizes=[10, 10], max_iter=1000, random_state=42)</pre></div> </div></div></div></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [54]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">y_pred</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[54]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>array([0, 1, 1, 1, 0, 1, 2, 2, 2, 2, 1, 2, 1, 1, 0, 0, 0, 1, 0, 1, 2, 1,
+       2, 1, 2, 1, 0, 2, 0, 2, 2, 2, 0, 0, 0, 0, 2, 1])</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [55]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">y_test</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[55]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>array([0, 1, 1, 1, 0, 1, 2, 2, 2, 2, 2, 2, 1, 1, 0, 0, 0, 1, 0, 1, 2, 1,
+       2, 1, 2, 1, 0, 2, 0, 1, 2, 2, 0, 0, 0, 0, 2, 1])</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [64]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="n">ConfusionMatrixDisplay</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span> <span class="n">display_labels</span><span class="o">=</span><span class="n">iris</span><span class="o">.</span><span class="n">target_names</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedImage jp-OutputArea-output" tabindex="0">
+<img alt="No description has been provided for this image" class="" src="data:image/png;base64,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DBEREdHDmHTJ86Oe7kxERESWx5vL/U/Dhg0fm7hkZWWZFRARERGZgdNDRWJjY0vcEZeIiIjoaTApaRk4cCBq1qxZXrEQERGRmTg9BPazEBERWQUFTw+V+eZyxVcPEREREVlCmSster2+POMgIiIiOSi40mJSTwsRERFVbOxpISIiIuug4EqLyQ9MJCIiIrIEVlqIiIiURMGVFiYtRERECqLknhZODxEREZFVYKWFiIhISTg9RERERNaA00NEREREFsZKCxERkZJweoiIiIisgoKTFk4PERERkVVgpYWIiEhBpP8t5o5RETFpISIiUhIFTw8xaSEiIlIQXvJMREREZGGstBARESkJp4eIiIjIalTQpMNcnB4iIiIiq8BKCxERkYIouRGXSQsREZGSKLinhdNDREREJJsZM2ZAkiSMHTtW9rFZaSEiIlIQS04PHT58GIsXL0bTpk3NC+AhWGkhIiJSEiHTYqLc3FwEBwdj6dKlqFq1qtk/RmmYtBAREZHZRo0ahVdffRWdO3cut3NweoioAnr1+R6WDoGeoi2HNls6BHoKcm7rUbVh+Z9HzumhnJwco/UqlQoqlarE/qtXr8axY8dw+PBh8078GKy0EBERKYmM00Oenp5wcXExLNOnTy9xuoyMDLz//vuIj4+HWq0u1x+NlRYiIiIlkfGS54yMDGg0GsPq0qosR48exfXr19G8eXPDOp1Oh3379uGLL75AXl4ebG1tzQyoCJMWIiIiKpVGozFKWkrTqVMnnDx50mjd0KFD0ahRI4SHh8uWsABMWoiIiBTlaV/y7OzsjOeee85onaOjI6pVq1ZivbmYtBARESmJgu+Iy6SFiIiIZLVnz55yGZdJCxERkYJIQkAS5pVKzD2+vDBpISIiUhIFTw/xPi1ERERkFVhpISIiUhBLPjCxvDFpISIiUhJODxERERFZFistRERECsLpISIiIrIOCp4eYtJCRESkIEqutLCnhYiIiKwCKy1ERERKwukhIiIishYVdXrHXJweIiIiIqvASgsREZGSCFG0mDtGBcSkhYiISEF49RARERGRhbHSQkREpCS8eoiIiIisgaQvWswdoyLi9BARERFZBVZaiIiIlITTQ0RERGQNlHz1EJMWIiIiJVHwfVrY00JERERWgZUWIiIiBeH0EBEREVkHBTficnqIiIiIrAIrLURERArC6SEi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"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>The <code>MLPClassifier</code> automatically determines the number of output neurons based on the target labels in the dataset (<code>y</code>) provided during training. Here's how it works:</p>
+<ol>
+<li><p><strong>Target Labels in the Iris Dataset</strong>:</p>
+<ul>
+<li>The Iris dataset has three classes (<code>setosa</code>, <code>versicolor</code>, and <code>virginica</code>), represented as <code>0</code>, <code>1</code>, and <code>2</code> in the target array (<code>y</code>).</li>
+</ul>
+</li>
+<li><p><strong>Output Layer Construction</strong>:</p>
+<ul>
+<li>During training, the <code>MLPClassifier</code> analyzes the target array (<code>y</code>) and determines the number of unique class labels using <code>numpy.unique(y)</code>.</li>
+<li>The number of unique labels (in this case, <code>3</code>) determines the number of neurons in the output layer.</li>
+</ul>
+</li>
+<li><p><strong>Activation Function</strong>:</p>
+<ul>
+<li>For multiclass classification, <code>MLPClassifier</code> uses a <strong>softmax activation function</strong> in the output layer. This ensures that the output values represent probabilities for each class, summing to 1.</li>
+</ul>
+</li>
+<li><p><strong>Mapping Predictions to Classes</strong>:</p>
+<ul>
+<li>During inference, the model outputs a probability distribution for each input sample. The class with the highest probability is chosen as the predicted class.</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+</div>
+</div>
+</div>
+</div>
+</main>
+</body>
+</html>

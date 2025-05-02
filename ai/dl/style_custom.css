@@ -1,0 +1,12 @@
+
+/* Make code cells scroll horizontally on small screens */
+div.output pre,
+div.input pre,
+div.output_area pre,
+div.input_area pre,
+pre {
+  overflow-x: auto;
+  white-space: pre;
+  word-wrap: normal;
+}
+
